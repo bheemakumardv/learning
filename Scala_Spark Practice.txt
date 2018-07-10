@@ -1,0 +1,22 @@
+1. Shortcut to open the REPL  : Ctrl + Alt + t
+
+2. REPL means: Read Evaluate Print Loop
+
+3. SCALA Features: 
+   a. Stands for scalable language
+   b. It is concise expression based programming language that was mainly designe to address the pit falls of JAVA
+   c. Is a multiparadigm language that like JAVA supports Object oriented programming.
+   d. Unlike JAVA, scala encourages functional programming.
+   e. Source code is more concise
+   f. Scala compiles the JAVA byte code so as to be able to run on JVM, does a result JAVA byte code and Scala byte code are treated as just the same from the       perspective of the JVM
+   g. JAVA interoperability is built into Scala so that scala can make use of many existing JAVA API's at no extra cost.
+   h. Scala can be used for wide range of programing tasks from writing smartscrits to building fault tolerant systems.
+   i. very nature of scala as scalable language makes it easier for us to implement and support parallel exection across multiple threads and even processes when ever       you want build scalable, fault tolerent, responsive and event driven applications.
+   j. Scala supports the defination of pure and higher order functions. A higher order function is a one that either accepts other functions as input parameter or       returns another function as its results.
+   k. In Scala functions are first class citizens. Meaning that we can assign function defintion to variables, pass functions as parameter to other functions and       even have a function return other function.
+   l. Scala supports Inheriance and Polymorphism.
+   m. As a matter of fact in contrast to JAVA everything in Scala is an Object. So all functions, numerical values,varibles, file classes, reference classes and so on        are objects.
+   n. Also Scala is class based, all values and instances of class with a super class being Scala.Any
+   o. Scala does not use the primitive type of JAVA like languages but pre 
+       
+  
