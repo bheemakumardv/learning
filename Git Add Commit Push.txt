@@ -1,0 +1,8 @@
+To push the files to Git repository do the following.
+
+1. Place the files / folders into the repository Git folder(C:\Program Files\Git\Learning) that are created.
+2. Being in the folder right click open "Git Bash Here" and execute the following commands.
+   git add . (Add the files).
+   git commit -m "Created a new file" (Commit files to local git
+   git push origin master (push the files / folders to git hub)
+
