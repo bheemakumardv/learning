@@ -1,0 +1,15 @@
+Steps to configure and upload files to git in ubuntu
+
+1. apt-get update: Before any install in ubuntu use this command.
+2. apt-get install git-core: To install git
+3. git --version: To check the git version
+4. git config --global user.name "bheema.donthi": To configure the git
+5. git config --global user.email "bheema.donthi@gmail.com": To configure the git
+6. cat ~/.gitconfig: To check the git configuration
+7. git config --list: To check the git configuration
+8. cd usr/usr/bin/: This is the git installed path
+9. git clone https://github.com/bheemakumardv/learning.git  To clone the git to local
+10.git add . This command is executed after placing a file in git folder.
+11.git commit -m "added new file" This command is used to commit changes to git
+12.git push origin master This command is used to move the file to remote git ie. git url location
+
