@@ -1,0 +1,93 @@
+osboxes@osboxes:~$ sh $HOME/project/sqoop/sqoop_create_hive_table.sh products;
+Table name passed is:: products
+Warning: /home/osboxes/YARN/sqoop/../hbase does not exist! HBase imports will fail.
+Please set $HBASE_HOME to the root of your HBase installation.
+Warning: /home/osboxes/YARN/sqoop/../hcatalog does not exist! HCatalog jobs will fail.
+Please set $HCAT_HOME to the root of your HCatalog installation.
+Warning: /home/osboxes/YARN/sqoop/../accumulo does not exist! Accumulo imports will fail.
+Please set $ACCUMULO_HOME to the root of your Accumulo installation.
+Warning: /home/osboxes/YARN/sqoop/../zookeeper does not exist! Accumulo imports will fail.
+Please set $ZOOKEEPER_HOME to the root of your Zookeeper installation.
+18/07/10 20:25:24 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7
+18/07/10 20:25:25 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+18/07/10 20:25:25 INFO tool.BaseSqoopTool: Using Hive-specific delimiters for output. You can override
+18/07/10 20:25:25 INFO tool.BaseSqoopTool: delimiters with --fields-terminated-by, etc.
+18/07/10 20:25:25 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+18/07/10 20:25:25 INFO tool.CodeGenTool: Beginning code generation
+Tue Jul 10 20:25:26 IST 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+18/07/10 20:25:26 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `products` AS t LIMIT 1
+18/07/10 20:25:26 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `products` AS t LIMIT 1
+18/07/10 20:25:26 INFO orm.CompilationManager: HADOOP_MAPRED_HOME is /home/osboxes/YARN/hadoop-2.7.2
+Note: /tmp/sqoop-osboxes/compile/94a019de61cd24113327120b739d8931/products.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+18/07/10 20:25:32 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-osboxes/compile/94a019de61cd24113327120b739d8931/products.jar
+18/07/10 20:25:32 WARN manager.MySQLManager: It looks like you are importing from mysql.
+18/07/10 20:25:32 WARN manager.MySQLManager: This transfer can be faster! Use the --direct
+18/07/10 20:25:32 WARN manager.MySQLManager: option to exercise a MySQL-specific fast path.
+18/07/10 20:25:32 INFO manager.MySQLManager: Setting zero DATETIME behavior to convertToNull (mysql)
+18/07/10 20:25:32 INFO mapreduce.ImportJobBase: Beginning import of products
+18/07/10 20:25:32 INFO Configuration.deprecation: mapred.jar is deprecated. Instead, use mapreduce.job.jar
+18/07/10 20:25:34 INFO Configuration.deprecation: mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+18/07/10 20:25:34 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/07/10 20:25:35 ERROR tool.ImportTool: Import failed: java.net.ConnectException: Call From osboxes/127.0.1.1 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+    at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+    at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:732)
+    at org.apache.hadoop.ipc.Client.call(Client.java:1479)
+    at org.apache.hadoop.ipc.Client.call(Client.java:1412)
+    at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+    at com.sun.proxy.$Proxy9.getFileInfo(Unknown Source)
+    at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.getFileInfo(ClientNamenodeProtocolTranslatorPB.java:771)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:497)
+    at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:191)
+    at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:102)
+    at com.sun.proxy.$Proxy10.getFileInfo(Unknown Source)
+    at org.apache.hadoop.hdfs.DFSClient.getFileInfo(DFSClient.java:2108)
+    at org.apache.hadoop.hdfs.DistributedFileSystem$22.doCall(DistributedFileSystem.java:1305)
+    at org.apache.hadoop.hdfs.DistributedFileSystem$22.doCall(DistributedFileSystem.java:1301)
+    at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+    at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1301)
+    at org.apache.hadoop.fs.FileSystem.exists(FileSystem.java:1424)
+    at org.apache.hadoop.mapreduce.lib.output.FileOutputFormat.checkOutputSpecs(FileOutputFormat.java:145)
+    at org.apache.hadoop.mapreduce.JobSubmitter.checkSpecs(JobSubmitter.java:266)
+    at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:139)
+    at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1290)
+    at org.apache.hadoop.mapreduce.Job$10.run(Job.java:1287)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at javax.security.auth.Subject.doAs(Subject.java:422)
+    at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1657)
+    at org.apache.hadoop.mapreduce.Job.submit(Job.java:1287)
+    at org.apache.hadoop.mapreduce.Job.waitForCompletion(Job.java:1308)
+    at org.apache.sqoop.mapreduce.ImportJobBase.doSubmitJob(ImportJobBase.java:200)
+    at org.apache.sqoop.mapreduce.ImportJobBase.runJob(ImportJobBase.java:173)
+    at org.apache.sqoop.mapreduce.ImportJobBase.runImport(ImportJobBase.java:270)
+    at org.apache.sqoop.manager.SqlManager.importTable(SqlManager.java:692)
+    at org.apache.sqoop.manager.MySQLManager.importTable(MySQLManager.java:127)
+    at org.apache.sqoop.tool.ImportTool.importTable(ImportTool.java:520)
+    at org.apache.sqoop.tool.ImportTool.run(ImportTool.java:628)
+    at org.apache.sqoop.Sqoop.run(Sqoop.java:147)
+    at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)
+    at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:183)
+    at org.apache.sqoop.Sqoop.runTool(Sqoop.java:234)
+    at org.apache.sqoop.Sqoop.runTool(Sqoop.java:243)
+    at org.apache.sqoop.Sqoop.main(Sqoop.java:252)
+Caused by: java.net.ConnectException: Connection refused
+    at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+    at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+    at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+    at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+    at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:495)
+    at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:614)
+    at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:712)
+    at org.apache.hadoop.ipc.Client$Connection.access$2900(Client.java:375)
+    at org.apache.hadoop.ipc.Client.getConnection(Client.java:1528)
+    at org.apache.hadoop.ipc.Client.call(Client.java:1451)
+    ... 40 more
+
+
